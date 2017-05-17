@@ -1,0 +1,36 @@
+<div href="#/list">
+  <h3>Products</h3>
+  <div class="container">
+    <div class="row">
+      <div class=" col-md-6 panel-body " ng-repeat="product in products">
+        <!-- <div class="productInfo"> -->
+        <p>
+          <a href="#/{{product.id}}">ID: {{product.id}}</a>
+        </p>
+        <p>Name: {{product.name}}</p>
+        <!-- <p>Description: {{product.description}}</p> -->
+        <button type="submit" class="btn btn-primary" ng-click="deleteProduct($index)">Delete</button>
+        <hr>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="col-6-md">
+      <form>
+        <div class="form-group">
+          <label for="productID">Product ID</label>
+          <input type="number" class="form-control" id="productID" placeholder="Prodcut ID" ng-model="newdata.id">
+        </div>
+        <div class="form-group">
+          <label for="productName">Product Name</label>
+          <input type="text" class="form-control" id="productName" placeholder="Prodcut Name" ng-model="newdata.name">
+        </div>
+        <div class="form-group">
+          <label for="productDescription">Product Description</label>
+          <input type="text" class="form-control" id="productDescription" placeholder="Prodcut Description" ng-model="newdata.description">
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="addProduct()">Add Product</button>
+      </form>
+    </div>
+  </div>
+</div>
